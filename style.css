@@ -130,7 +130,6 @@ footer {
   }
   main > .card .position {
     left: 85%;
-    font-weight: bold;
   }
   main .card:nth-of-type(2),
   main .card:nth-of-type(4),
