@@ -1,0 +1,156 @@
+$font-1: "Poppins", sans-serif;
+$font-2: "PT Serif", serif;
+$footerFont: "Montserrat", sans-serif;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  width: 100vw;
+  height: 100vh;
+}
+
+body {
+  width: 80%;
+  margin: auto;
+  overflow-x: hidden;
+  padding-top: 8vh;
+
+  > * + * {
+    margin-top: 10vh;
+  }
+}
+
+header {
+  display: flex;
+
+  > * {
+    flex: 1;
+  }
+
+  h1 {
+    font-family: $font-2;
+    font-weight: bold;
+    letter-spacing: -0.1rem;
+  }
+
+  .summary {
+    font-family: $font-1;
+    font-size: 16px;
+
+    h6 {
+      font-family: inherit;
+      font-size: 1.2em;
+      text-transform: uppercase;
+    }
+
+    p {
+      margin-top: 0.8em;
+    }
+  }
+}
+
+main {
+  display: flex;
+  flex-wrap: wrap;
+
+  > .card {
+    width: 33%;
+    position: relative;
+    font-size: 16px;
+    img {
+      width: 70%;
+    }
+
+    .name {
+      text-transform: capitalize;
+      font-family: $font-1;
+      font-size: 1.1em;
+      font-weight: bold;
+      line-height: 2.5em;
+    }
+
+    .position {
+      width: 100%;
+      position: absolute;
+      left: 80%;
+      top: 0;
+      transform-origin: 0 0;
+      transform: rotate(90deg);
+      font-family: $font-2;
+      text-transform: uppercase;
+      font-weight: normal;
+      font-size: 1.1em;
+    }
+  }
+
+  > .card:nth-of-type(2),
+  > .card:nth-of-type(5) {
+    margin-top: 10vh;
+  }
+}
+
+footer {
+  font-family: $footerFont;
+  text-align: center;
+  margin-bottom: 5vh;
+  color: #a9a9a9;
+}
+
+@media (max-width: 900px) {
+  body {
+    width: 90%;
+    padding-top: 5vh;
+  }
+  header {
+    flex-direction: column;
+    > * + * {
+      margin-top: 5vh;
+    }
+  }
+  main {
+    > .card {
+      width: 50%;
+      font-size: 14px;
+
+      img {
+        width: 75%;
+      }
+
+      .position {
+        left: 85%;
+        font-weight: bold;
+      }
+    }
+    .card:nth-of-type(2),
+    .card:nth-of-type(4),
+    .card:nth-of-type(6) {
+      margin-top: 10vh;
+    }
+
+    .card:nth-of-type(1),
+    .card:nth-of-type(3),
+    .card:nth-of-type(5) {
+      margin-top: 0;
+    }
+  }
+}
+
+@media (max-width: 400px) {
+  header {
+    .summary {
+      font-size: 14px;
+    }
+  }
+  main {
+    > .card {
+      font-size: 12px;
+      img {
+        width: 70%;
+      }
+    }
+  }
+}
